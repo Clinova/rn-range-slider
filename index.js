@@ -98,10 +98,10 @@ const Slider = (
     return [styles.railsContainer, { marginHorizontal: thumbWidth / 2 }];
   }, [thumbWidth]);
 
-  const [labelView, labelUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderLabel, true, allowLabelOverflow);
+  const [labelView, labelUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderLabel, isPressed, allowLabelOverflow);
   const [notchView, notchUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderNotch, isPressed, allowLabelOverflow);
-  const lowThumb = renderThumb();
-  const highThumb = renderThumb();
+  const lowThumb = renderThumb(lowProp);
+  const highThumb = renderThumb(highProp);
 
   const labelContainerProps = useLabelContainerProps(floatingLabel);
 
